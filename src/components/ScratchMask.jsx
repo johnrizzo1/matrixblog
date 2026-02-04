@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const ScratchMask = () => {
     const canvasRef = useRef(null);
@@ -190,8 +191,8 @@ const ScratchMask = () => {
                 }}
             />
             {showRabbit && (
-                <a
-                    href="/rabbit-hole"
+                <Link
+                    to="/rabbit-hole"
                     style={{
                         position: 'fixed',
                         bottom: '20px',
@@ -213,7 +214,7 @@ const ScratchMask = () => {
                             to { opacity: 1; }
                         }
                     `}</style>
-                </a>
+                </Link>
             )}
         </>
     );
