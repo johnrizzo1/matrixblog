@@ -120,7 +120,7 @@ const SpinWheel = () => {
             animate={isHome ? "center" : "corner"}
             variants={{
                 center: {
-                    top: "50%",
+                    top: isMobile ? "60%" : "55%", // Pushed down to clear the header
                     left: "50%",
                     scale: 1,
                     x: "-50%",
@@ -199,15 +199,10 @@ const SpinWheel = () => {
                                 >
                                     <path
                                         d={describeArc(radius, radius, radius, startAngle, endAngle)}
-                                        fill={`url(#grad-${index})`}
+                                        fill={section.color}
                                         stroke="#111"
                                         strokeWidth="2"
                                     />
-                                    {/* Metallic Gradient Definition per sector to simulate light hitting it differently */}
-                                    <radialGradient id={`grad-${index}`} cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
-                                        <stop offset="0%" stopColor="#2a2a2a" /> {/* Dark Grey */}
-                                        <stop offset="100%" stopColor="#000000" /> {/* Pure Black */}
-                                    </radialGradient>
                                 </g>
                             );
                         })}

@@ -18,10 +18,10 @@ const MainHeader = () => {
                     exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
                     style={{
                         position: 'fixed',
-                        top: isMobile ? '10%' : '15%',
+                        top: isMobile ? '20px' : '40px', // Raised up to avoid wheel overlap
                         left: 0,
                         width: '100%',
-                        zIndex: 50,
+                        zIndex: 102, // Above SpinWheel (100)
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
